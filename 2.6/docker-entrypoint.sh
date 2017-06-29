@@ -7,7 +7,7 @@ fi
 
 if [ "$1" = 'mongod' ]; then
 	chown -R mongodb /data/db
-	exec mongodb "$@" --smallfiles
+	exec su-exec mongodb "$@" --smallfiles
 fi
 
-exec "$@" --smallfiles
+exec "$@"

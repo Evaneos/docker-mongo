@@ -1,6 +1,6 @@
 FROM alpine:3.5
 
-ENV MONGODB_VERSION 2.6.12
+ENV MONGODB_VERSION 3.4.5
 
 ENV MONGODATA /data/db
 
@@ -25,7 +25,7 @@ RUN set -ex \
     && /usr/glibc-compat/sbin/ldconfig /lib /usr/glibc-compat/lib \
     && mkdir -p /tmp/mongo \
     && curl -Lo mongo.tgz https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-${MONGODB_VERSION}.tgz \
-    && curl -fsSL http://downloads.mongodb.org/linux/mongodb-linux-x86_64-2.6.12.tgz.sha256 | awk '{print $1 " *mongo.tgz"} ' | sha256sum -c - \
+    && curl -fsSL http://downloads.mongodb.org/linux/mongodb-linux-x86_64-3.4.5.tgz.sha256 | awk '{print $1 " *mongo.tgz"} ' | sha256sum -c - \
     && tar \
         --extract \
         --file mongo.tgz \
