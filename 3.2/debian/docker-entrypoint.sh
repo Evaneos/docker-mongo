@@ -8,8 +8,8 @@ if [ "${1:0:1}" = '-' ]; then
 fi
 
 if [ "$1" = 'mongod' ]; then
-	chown -R mongodb:mongodb $MONGODATA
-	exec su-exec mongodb "$@" --dbpath $MONGODATA --smallfiles
+	chown -R mongodb $MONGODATA
+	exec gosu mongodb "$@" --dbpath $MONGODATA --smallfiles
 fi
 
 exec "$@"

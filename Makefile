@@ -1,4 +1,9 @@
 build:
-	docker build -t evaneos/mongo:2.6 2.6
-	docker build -t evaneos/mongo:2.6-alpine 2.6/alpine
-	docker build -t evaneos/mongo:2.6-alpine-minimal 2.6/alpine/minimal
+	make --directory=2.6 build
+	make --directory=3.2 build
+	make --directory=3.6 build
+
+push:
+	make --directory=2.6 push
+	make --directory=3.2 push
+	make --directory=3.6 push
