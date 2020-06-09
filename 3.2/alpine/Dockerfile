@@ -37,7 +37,7 @@ ENTRYPOINT ["/entrypoint.sh"]
 EXPOSE 27017
 CMD ["mongod"]
 
-ENV MONGODB_VERSION 2.6.6
+ENV MONGODB_VERSION 3.2.19
 
 FROM base as full
 
